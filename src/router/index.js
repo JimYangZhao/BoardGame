@@ -10,6 +10,8 @@ import 吉祥赛事 from '@/views/吉祥赛事';
 Vue.use(Router)
 
 export default new Router({
+    mode: "history", // hash，选择模式，history/hash
+    base: process.env.BASE_URL,
     routes: [
         {
             path: '/',
@@ -41,9 +43,11 @@ export default new Router({
             name: '联系我们',
             component: 联系我们
         },
-        // {
-		// 	path:'/*', //请求根路由时,重定向到首页路由
-		// 	redirect:'/404'
-		// }
+        {
+            path: "*", // 这个路由可以匹配所有的路径 /list
+            name: "404",
+            component: () =>
+                import(/* webpackChunkName: "404" */ "../views/404.vue")
+        }
     ]
 })

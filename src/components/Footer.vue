@@ -47,19 +47,19 @@ export default {
         {
           id: 0,
           title: '微信公众号',
-          src: require('../assets/公众号.png'),
+          src: require('../assets/WX20210824-102100@2x.png'),
           foot: '点击图标进入',
         },
         {
           id: 1,
           title: '微信视频号',
-          src: require('../assets/视频号.png'),
+          src: require('../assets/WX20210824-102100@2x.png'),
           foot: '点击图标进入',
         },
         {
           id: 2,
           title: '官方抖音号',
-          src: require('../assets/抖音.png'),
+          src: require('../assets/WX20210824-102100@2x.png'),
           foot: '点击图标进入',
         },
       ],
@@ -69,6 +69,20 @@ export default {
 </script>
 
 <style scoped>
+label,
+.title {
+  display: flex;
+  transform: translateY(2.5vh);
+  background: #312826;
+  padding: 0 0.13333rem;
+  white-space: nowrap;
+  margin: 15px;
+}
+.box > img {
+  height: 1.3rem;
+  width: auto;
+  margin: 10px 0;
+}
 .btn-footer {
   color: white;
   background-color: #ce182e;
@@ -95,9 +109,5 @@ export default {
 }
 span > a {
   color: white;
-}
-.box > img {
-  height: 60px;
-  width: auto;
 }
 </style>
