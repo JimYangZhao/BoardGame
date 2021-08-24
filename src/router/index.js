@@ -10,7 +10,7 @@ import 吉祥赛事 from '@/views/吉祥赛事';
 Vue.use(Router)
 
 export default new Router({
-    mode: "history", // hash，选择模式，history/hash
+    mode: "hash", // hash，选择模式，history/hash
     base: process.env.BASE_URL,
     routes: [
         {
@@ -19,27 +19,27 @@ export default new Router({
             component: 首页
         },
         {
-            path:'/关于吉祥',
+            path:'/about',
             name: '关于吉祥',
             component: 关于吉祥
         },
         {
-            path:'/游戏动态',
+            path:'/news',
             name: '游戏动态',
             component: 游戏动态
         },
         {
-            path:'/吉祥赛事',
+            path:'/match',
             name: '吉祥赛事',
             component: 吉祥赛事
         },
         {
-            path:'/游戏产品',
+            path:'/products',
             name: '游戏产品',
             component: 游戏产品
         },
         {
-            path:'/联系我们',
+            path:'/contact',
             name: '联系我们',
             component: 联系我们
         },
@@ -50,4 +50,21 @@ export default new Router({
                 import(/* webpackChunkName: "404" */ "../views/404.vue")
         }
     ]
-})
+});
+const router = new Router({
+    mode: "history",
+    base: process.env.BASE_URL,
+});
+// 全局的导航守卫
+router.beforeEach((to, from, next) => {
+    console.log(`Router.beforeEach => from=${from.path}, to=${to.path}`);
+    document.title = to.meta.title || "默认标题";
+    // 执行下一个路由导航
+    next();
+});
+
+router.afterEach((to, from) => {
+    console.log(`Router.afterEach => from=${from.path}, to=${to.path}`);
+});
+
+
