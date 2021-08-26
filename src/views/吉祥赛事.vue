@@ -19,11 +19,7 @@
       <div class="p-3"><img src="../assets/赛事/赛事回顾.png" alt="赛事回顾" /></div>
       <Video />
       <Coverflow />
-      <Footer
-        contents1="腾讯公司版权所有COPYRIGHT @1998 - 2020 TENCENT ALL RIGHTS RESERVED 本网络游戏适合17+岁的用户使用；为了您的健康，请合理控制游戏时间。 工商网兼电子问文(2017)6138-1464号！ (总)"
-        contents2="腾讯公司"
-        copyright="Helloworld"
-      />
+      <Footer />
     </div>
   </div>
 </template>
@@ -88,22 +84,22 @@ export default {
         {
           title: '福利赛',
           contents: '每天9场定时开赛',
-          popupContents: require('../assets/赛事/popUp/赛事介绍锦标赛.png'),
+          popupContents: require('../assets/赛事/popUp/赛事介绍福利赛.png'),
         },
         {
           title: '大师赛',
           contents: '每晚20:30赢家点',
-          popupContents: require('../assets/赛事/popUp/赛事介绍锦标赛.png'),
+          popupContents: require('../assets/赛事/popUp/赛事介绍大师赛.png'),
         },
         {
           title: '闯关赛',
           contents: '随到随闯，爽快通关',
-          popupContents: require('../assets/赛事/popUp/赛事介绍锦标赛.png'),
+          popupContents: require('../assets/赛事/popUp/赛事介绍闯关赛.png'),
         },
         {
           title: '电视赛',
           contents: '预约报名，上电视，赢大奖',
-          popupContents: require('../assets/赛事/popUp/赛事介绍锦标赛.png'),
+          popupContents: require('../assets/赛事/popUp/赛事介绍电视赛.png'),
         },
       ],
     };

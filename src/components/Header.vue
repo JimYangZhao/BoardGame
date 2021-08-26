@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="nav background-nav">
-      <ul>
+      <ul class="GameNavHeight">
         <li>
           <a href="/"><img v-bind:src="logoSrc" alt="logo"/></a>
         </li>
@@ -77,6 +77,7 @@ export default {
         { id: 5, name: '联系我们' },
         { id: 6, name: '斗地主' },
         { id: 7, name: '麻将' },
+        { id: 8, name: '四川麻将' },
       ],
       chose: 0,
       logoSrc: 'https://jixiang.cn/img/logo.png',

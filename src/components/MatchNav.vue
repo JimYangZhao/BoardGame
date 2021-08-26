@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="nav MatchNav background-matchnav">
-      <ul>
+      <ul class="GameNavHeight">
         <li>
           <!-- Logo -->
           <a href="/" style="display:flex"><img :src="logoSrc" alt="logo"/></a>
@@ -84,6 +84,9 @@ export default {
         { id: 3, name: '吉祥赛事' },
         { id: 4, name: '游戏产品' },
         { id: 5, name: '联系我们' },
+        { id: 6, name: '斗地主' },
+        { id: 7, name: '麻将' },
+        { id: 8, name: '四川麻将' },
       ],
       chose: 0,
       // logoSrc: require('../assets/赛事/抬头2.png'),

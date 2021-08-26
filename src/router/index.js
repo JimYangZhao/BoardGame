@@ -8,6 +8,8 @@ import 联系我们 from '@/views/联系我们';
 import 吉祥赛事 from '@/views/吉祥赛事';
 import 斗地主 from '@/views/斗地主';
 import 麻将 from '@/views/麻将';
+import 四川麻将 from '@/views/四川麻将';
+
 
 Vue.use(Router)
 
@@ -54,6 +56,11 @@ export default new Router({
             path:'/majiang',
             name: '麻将',
             component: 麻将
+        },
+        {
+            path:'/sichuanmajiang',
+            name: '四川麻将',
+            component: 四川麻将
         },
         {
             path: "*", // 这个路由可以匹配所有的路径 /list

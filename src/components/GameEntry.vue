@@ -46,13 +46,11 @@ export default {
   display: flex;
   align-items: flex-end;
 }
-.van-popup__close-icon {
-  position: absolute;
-  z-index: 1;
-  color: #7b160b;
-  font-size: 40px;
-  cursor: pointer;
-  font-weight: 900;
+.van-popup__close-icon--top-right {
+  top: 0px;
+}
+.van-button__text {
+  font-size: unset;
 }
 h2 {
   margin: 0px;

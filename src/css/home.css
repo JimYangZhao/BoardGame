@@ -1,6 +1,12 @@
 /* // @primary-color: #ce182e;
 // @dark-footer-background: #312826;
 // @light-footer-background: #3e3434; */
+button {
+  font-size: 0.45rem;
+}
+.van-button__text {
+  font-size: 0.45rem;
+}
 .d-flex {
   display: flex;
   margin: auto;
@@ -208,4 +214,15 @@ li {
   display: flex;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%) scale(3.5);
+}
+.GameNavHeight {
+  height: 1.7rem;
+}
+.van-popup__close-icon {
+  position: absolute;
+  z-index: 1;
+  color: #7b160b;
+  font-size: 40px;
+  cursor: pointer;
+  font-weight: 900;
 }

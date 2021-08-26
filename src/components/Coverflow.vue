@@ -46,10 +46,8 @@ export default {
       someList: [
         {
           id: 0,
-          html: 'slider1',
-          src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
           style: {
-            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
+            backgroundImage: 'url(' + require('../assets/赛事/图片1.jpg') + ')',
             backgroundSize: 'cover',
             width: '60%',
             backgroundPosition: 'center',
@@ -57,10 +55,8 @@ export default {
         },
         {
           id: 1,
-          html: 'slider2',
-          src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
           style: {
-            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
+            backgroundImage: 'url(' + require('../assets/赛事/图片2.jpg') + ')',
             backgroundSize: 'cover',
             width: '60%',
             backgroundPosition: 'center',
@@ -68,45 +64,11 @@ export default {
         },
         {
           id: 2,
-          html: 'slider3',
-          src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
+          // src: 'https://img01.yzcdn.cn/vant/cat2.jpeg',
           style: {
-            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
+            backgroundImage: 'url(' + require('../assets/赛事/图片3.jpg') + ')',
             backgroundSize: 'cover',
             width: '60%',
-            backgroundPosition: 'center',
-          },
-        },
-        {
-          id: 3,
-          html: 'slider4',
-          src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
-          style: {
-            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
-            backgroundSize: 'cover',
-            width: '60%',
-            backgroundPosition: 'center',
-          },
-        },
-        {
-          id: 4,
-          html: 'slider5',
-          src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
-          style: {
-            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
-            width: '60%',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          },
-        },
-        {
-          id: 5,
-          html: 'slider6',
-          src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
-          style: {
-            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
-            width: '60%',
-            backgroundSize: 'cover',
             backgroundPosition: 'center',
           },
         },
