@@ -9,21 +9,17 @@
     <div class="dark-footer">
       <div class="d-flex container">
         <div v-for="item in boxInfo" :key="item.id">
-          <label class="title">{{ item.title }}</label>
-          <div class="box">
-            <img :src="item.src" alt="image" />
-          </div>
-          <p style="color: white;">{{ item.foot }}</p>
+          <img :src="item.src" alt="image" />
         </div>
       </div>
       <hr />
       <div class="container">
-        <span style="color: white;font-size:28px;"
+        <span style="color: white;"
           ><a href="#">关于吉祥 | </a><a href="#">商务合作 | </a> <a href="#">家长监护<br /></a><a href="#">用户协议 | </a><a href="#">隐私政策</a></span
         >
-        <p style="color: white;font-size:10px;">{{ contents1 }}</p>
-        <p style="color:#dfe098;font-size:10px;">{{ contents2 }}</p>
-        <p style="color:white;font-size:10px;">{{ copyright }}</p>
+        <p style="color: white;">{{ contents1 }}</p>
+        <p style="color:#dfe098;">{{ contents2 }}</p>
+        <p style="color:white;">{{ copyright }}</p>
       </div>
     </div>
   </div>
@@ -42,25 +38,19 @@ export default {
   },
   data() {
     return {
-      urlImage: 'https://jixiang.cn/img/jx-logo.png',
+      urlImage: require('../assets/尾部/吉祥创造更多快乐.png'),
       boxInfo: [
         {
           id: 0,
-          title: '微信公众号',
-          src: require('../assets/WX20210824-102100@2x.png'),
-          foot: '点击图标进入',
+          src: require('../assets/首页/公众号按钮.png'),
         },
         {
           id: 1,
-          title: '微信视频号',
-          src: require('../assets/WX20210824-102100@2x.png'),
-          foot: '点击图标进入',
+          src: require('../assets/首页/视频号按钮.png'),
         },
         {
           id: 2,
-          title: '官方抖音号',
-          src: require('../assets/WX20210824-102100@2x.png'),
-          foot: '点击图标进入',
+          src: require('../assets/首页/抖音按钮.png'),
         },
       ],
     };
@@ -69,6 +59,12 @@ export default {
 </script>
 
 <style scoped>
+p {
+  font-size: 6px;
+}
+span > a {
+  font-size: 12px;
+}
 label,
 .title {
   display: flex;
@@ -89,7 +85,7 @@ label,
   border-color: transparent;
   border-radius: 20px;
   font-size: 10px;
-  padding: 5px 10px;
+  padding: 15px 25px;
   margin-top: 17px;
 }
 

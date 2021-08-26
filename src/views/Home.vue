@@ -20,7 +20,17 @@ import Download from '../components/Download';
 import News from '../components/News';
 import Tournament from '../components/Tournament';
 import Banner from '../components/Banner';
-
+// import Vue from 'vue';
+// import Axios from 'axios';
+// import VueAxios from 'vue-axios';
+// Vue.use(VueAxios, Axios);
+// const axios = require('axios');
+// axios({
+//   methods: 'get',
+//   url: 'http://csq.jixiangtest.com/api/product/list',
+// }).then((res) => {
+//   this.list = res.data;
+// });
 export default {
   name: 'Home',
   props: {},

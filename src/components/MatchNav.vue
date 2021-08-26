@@ -4,7 +4,7 @@
       <ul>
         <li>
           <!-- Logo -->
-          <a href="/"><img v-bind:src="logoSrc" alt="logo"/></a>
+          <a href="/" style="display:flex"><img :src="logoSrc" alt="logo"/></a>
         </li>
         <li style="float:right;height:100px;">
           <!-- 按钮 -->
@@ -55,7 +55,7 @@ Vue.use(Lazyload);
 Vue.use(Popup);
 
 export default {
-  props: ['title', 'menu'],
+  props: ['logoSrc'],
   computed: {
     username() {
       return this.$route.params.username;
@@ -86,7 +86,7 @@ export default {
         { id: 5, name: '联系我们' },
       ],
       chose: 0,
-      logoSrc: 'https://jixiang.cn/img/logo.png',
+      // logoSrc: require('../assets/赛事/抬头2.png'),
       // DropDown Menu
       value1: 0,
       value2: 'a',
@@ -104,12 +104,6 @@ export default {
 </script>
 
 <style scoped>
-.goDownload {
-  white-space: nowrap;
-  padding: 5px 10px;
-  background: linear-gradient(0deg, rgba(255, 216, 86, 1) 0%, rgba(255, 235, 142, 1) 100%);
-  border: 0px;
-}
 .background-matchnav {
   background: #262625;
 }

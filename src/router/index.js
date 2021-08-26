@@ -6,6 +6,8 @@ import 游戏动态 from '@/views/游戏动态';
 import 游戏产品 from '@/views/游戏产品';
 import 联系我们 from '@/views/联系我们';
 import 吉祥赛事 from '@/views/吉祥赛事';
+import 斗地主 from '@/views/斗地主';
+import 麻将 from '@/views/麻将';
 
 Vue.use(Router)
 
@@ -42,6 +44,16 @@ export default new Router({
             path:'/contact',
             name: '联系我们',
             component: 联系我们
+        },
+        {
+            path:'/pocker',
+            name: '斗地主',
+            component: 斗地主
+        },
+        {
+            path:'/majiang',
+            name: '麻将',
+            component: 麻将
         },
         {
             path: "*", // 这个路由可以匹配所有的路径 /list

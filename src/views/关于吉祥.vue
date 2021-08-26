@@ -2,9 +2,8 @@
   <div class="关于吉祥">
     <Header menu="菜单按钮" />
     <div class="d-flex flex-v">
-      <h1>{{ title }}</h1>
-      <p style="margin-top:0px;">{{ subtitle }}</p>
-      <img :src="images" alt="img" class="mx-ht100" />
+      <div class="p-3"><img src="../assets/公司介绍/公司介绍文字.png" alt="公司介绍文字" /></div>
+      <img :src="images" alt="img" />
       <p>{{ contents }}</p>
     </div>
     <Footer
@@ -22,9 +21,8 @@ export default {
   data() {
     return {
       value: '',
-      title: '公司介绍',
-      subtitle: 'COMPANY INFORMATION',
-      images: 'https://img01.yzcdn.cn/vant/apple-2.jpg',
+
+      images: require('../assets/公司介绍/公司介绍图片.png'),
       contents: 'abcd',
     };
   },

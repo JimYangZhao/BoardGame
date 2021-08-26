@@ -33,17 +33,27 @@ export default {
       images: [
         {
           id: 0,
-          srcImage: require('../assets/主轮播图1.png'),
+          srcImage: require('../assets/首页/捕鱼轮播.png'),
           buttons: '查看详情',
         },
         {
           id: 1,
-          srcImage: require('../assets/主轮播图2.png'),
+          srcImage: require('../assets/首页/斗地主轮播.png'),
           buttons: '查看详情',
         },
         {
           id: 2,
-          srcImage: require('../assets/主轮播图3.png'),
+          srcImage: require('../assets/首页/吉祥11年轮播.png'),
+          buttons: '查看详情',
+        },
+        {
+          id: 3,
+          srcImage: require('../assets/首页/吉祥麻将轮播.png'),
+          buttons: '查看详情',
+        },
+        {
+          id: 4,
+          srcImage: require('../assets/首页/四川麻将轮播.png'),
           buttons: '查看详情',
         },
       ],
@@ -56,19 +66,13 @@ export default {
 .btn_position {
   border-radius: 20px;
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   left: 50%;
   margin-left: -75px;
+  border-color: transparent;
 }
 .banner {
   height: 100%;
   width: 100%;
-  /* display: flex; */
-  /* justify-content: center;
-  align-items: flex-end;
-  transform: translateY(-20%); */
 }
-/* .van-swipe__track > .van-swipe__indicators {
-  transform: scale(4.5);
-} */
 </style>

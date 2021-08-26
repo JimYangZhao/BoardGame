@@ -2,10 +2,9 @@
   <div class="联系我们">
     <Header menu="菜单按钮" />
     <div class="d-flex flex-v">
-      <h1>{{ title }}</h1>
-      <p style="margin-top:0px;">{{ subtitle }}</p>
+      <div class="p-3"><img src="../assets/联系我们/联系我们文字.png" alt="联系我们文字" /></div>
       <div class="map-conf overflow border-r">
-        <img :src="images" alt="img" class="mx-ht100" />
+        <img :src="images" alt="img" class="" />
       </div>
 
       <div v-for="item in contents" :key="item.id" class="d-flex flex-v p-3 border">
@@ -29,9 +28,7 @@ export default {
   data() {
     return {
       value: '',
-      title: '联系我们',
-      subtitle: 'CONTACT US',
-      images: 'https://img01.yzcdn.cn/vant/apple-2.jpg',
+      images: require('../assets/联系我们/地图.png'),
       contents: [
         {
           id: 0,

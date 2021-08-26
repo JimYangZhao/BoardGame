@@ -1,5 +1,5 @@
 <template>
-  <div class="download">
+  <div class="download container m-3">
     <div style="width:100%;height:400px">
       <slider ref="slider" :options="options">
         <!-- slideritem wrapped package with the components you need -->
@@ -49,8 +49,10 @@ export default {
           html: 'slider1',
           src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
           style: {
-            background: '#4abf8a',
-            width: '33.33333333%',
+            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
+            backgroundSize: 'cover',
+            width: '60%',
+            backgroundPosition: 'center',
           },
         },
         {
@@ -58,8 +60,10 @@ export default {
           html: 'slider2',
           src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
           style: {
-            background: '#4bbfc3',
-            width: '33.33333333%',
+            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
+            backgroundSize: 'cover',
+            width: '60%',
+            backgroundPosition: 'center',
           },
         },
         {
@@ -67,8 +71,10 @@ export default {
           html: 'slider3',
           src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
           style: {
-            background: '#7baabe',
-            width: '33.33333333%',
+            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
+            backgroundSize: 'cover',
+            width: '60%',
+            backgroundPosition: 'center',
           },
         },
         {
@@ -76,8 +82,10 @@ export default {
           html: 'slider4',
           src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
           style: {
-            background: '#4abf8a',
-            width: '33.33333333%',
+            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
+            backgroundSize: 'cover',
+            width: '60%',
+            backgroundPosition: 'center',
           },
         },
         {
@@ -85,8 +93,10 @@ export default {
           html: 'slider5',
           src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
           style: {
-            background: '#4bbfc3',
-            width: '33.33333333%',
+            backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
+            width: '60%',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           },
         },
         {
@@ -95,8 +105,9 @@ export default {
           src: 'https://img01.yzcdn.cn/vant/cat.jpeg',
           style: {
             backgroundImage: 'url(https://img01.yzcdn.cn/vant/cat.jpeg)',
-            width: '33.33333333%',
-                backgroundSize: 'cover';
+            width: '60%',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
           },
         },
       ],
@@ -106,6 +117,9 @@ export default {
 </script>
 
 <style scoped>
+.m-3 {
+  margin: 30px auto;
+}
 .slider-item {
   flex-direction: column;
 }

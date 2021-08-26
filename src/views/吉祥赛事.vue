@@ -1,38 +1,30 @@
 <template>
   <div class="GamePage" title="吉祥赛事" id="Gamepage">
-    <MatchNav menu="菜单按钮" />
-    <div class="head-img">
-      <img :src="Headimg" alt="img" />
-    </div>
-    <h2>赛事福利</h2>
-    <div class="gift d-flex">
-      <div v-for="item in gift" :key="item" class="item flex-v">
-        <img :src="item.src" alt="image" class="img-size" />
-        <div class="background-img">
-          <p>{{ item.text }}</p>
+    <MatchNav :logoSrc="logo" />
+    <div class="background">
+      <div class="head-img"></div>
+      <div class="p-3"><img src="../assets/赛事/赛事福利.png" alt="赛事福利" /></div>
+      <div class="gift d-flex center">
+        <div v-for="item in gift" :key="item" class="item flex-v">
+          <img :src="item.src" alt="image" class="img-size" />
+          <div class="background-img">
+            <p>{{ item.text }}</p>
+          </div>
         </div>
       </div>
-    </div>
-    <h2>赛事介绍</h2>
-    <div v-for="item in entry" :key="item" class="container">
-      <GameEntry :title="item.title" :contents="item.contents" />
-    </div>
-    <h2>赛事回顾</h2>
-    <div class="container">
-      <a href="javascript:playVideo('https://jxcloudimg.oss-cn-beijing.aliyuncs.com/video/6qi.mp4')"
-        ><van-image width="100%" height="100%" src="https://img01.yzcdn.cn/vant/cat.jpeg"/>
-        <img width="50" src="https://lh3.googleusercontent.com/proxy/ExtwXJWBgPAiCOh2VGthBwZ2GZusdnBxcmomkc4HaJlrt7VWwrBiF7ZkF2TuMNxbZ78lKWGfeoujgYJw9zyYcoUnlqMp8BwvP9azWXr5TGU_KYKuwQ" class="play"
-      /></a>
-    </div>
-    <div class="container m-3">
+      <div class="p-3"><img src="../assets/赛事/赛事介绍.png" alt="赛事介绍" /></div>
+      <div v-for="item in entry" :key="item" class="container">
+        <GameEntry :title="item.title" :contents="item.contents" :popupContents="item.popupContents" />
+      </div>
+      <div class="p-3"><img src="../assets/赛事/赛事回顾.png" alt="赛事回顾" /></div>
+      <Video />
       <Coverflow />
+      <Footer
+        contents1="腾讯公司版权所有COPYRIGHT @1998 - 2020 TENCENT ALL RIGHTS RESERVED 本网络游戏适合17+岁的用户使用；为了您的健康，请合理控制游戏时间。 工商网兼电子问文(2017)6138-1464号！ (总)"
+        contents2="腾讯公司"
+        copyright="Helloworld"
+      />
     </div>
-
-    <Footer
-      contents1="腾讯公司版权所有COPYRIGHT @1998 - 2020 TENCENT ALL RIGHTS RESERVED 本网络游戏适合17+岁的用户使用；为了您的健康，请合理控制游戏时间。 工商网兼电子问文(2017)6138-1464号！ (总)"
-      contents2="腾讯公司"
-      copyright="Helloworld"
-    />
   </div>
 </template>
 
@@ -43,6 +35,7 @@ import GameEntry from '../components/GameEntry';
 import Vue from 'vue';
 import { Image as VanImage } from 'vant';
 import Coverflow from '../components/Coverflow';
+import Video from '../components/Video';
 Vue.use(VanImage);
 
 export default {
@@ -62,40 +55,55 @@ export default {
     Footer,
     GameEntry,
     Coverflow,
+    Video,
   },
   data() {
     return {
-      Headimg: require('../assets/主轮播图1.png'),
+      logo: require('../assets/赛事/抬头2.png'),
+      // Headimg: require('../assets/首页/主轮播图1.png'),
       gift: [
         {
-          src: 'https://m.jixiang.cn/jixiang/images/buyunew.png',
-          text: '数码产品',
+          src: require('../assets/赛事/数码产品.png'),
+          // text: '数码产品',
         },
         {
-          src: 'https://m.jixiang.cn/jixiang/images/buyunew.png',
-          text: '数码产品2',
+          src: require('../assets/赛事/生活家电.png'),
+          // text: '数码产品2',
         },
         {
-          src: 'https://m.jixiang.cn/jixiang/images/buyunew.png',
-          text: '数码产品3',
+          src: require('../assets/赛事/休闲食品.png'),
+          // text: '数码产品3',
         },
         {
-          src: 'https://m.jixiang.cn/jixiang/images/buyunew.png',
-          text: '数码产品4',
+          src: require('../assets/赛事/海量道具.png'),
+          // text: '数码产品4',
         },
       ],
       entry: [
         {
           title: '锦标赛',
-          contents: '锦标赛好',
+          contents: '循环开赛，人满即开',
+          popupContents: require('../assets/赛事/popUp/赛事介绍锦标赛.png'),
         },
         {
           title: '福利赛',
-          contents: '锦标赛好',
+          contents: '每天9场定时开赛',
+          popupContents: require('../assets/赛事/popUp/赛事介绍锦标赛.png'),
         },
         {
           title: '大师赛',
-          contents: '锦标赛好',
+          contents: '每晚20:30赢家点',
+          popupContents: require('../assets/赛事/popUp/赛事介绍锦标赛.png'),
+        },
+        {
+          title: '闯关赛',
+          contents: '随到随闯，爽快通关',
+          popupContents: require('../assets/赛事/popUp/赛事介绍锦标赛.png'),
+        },
+        {
+          title: '电视赛',
+          contents: '预约报名，上电视，赢大奖',
+          popupContents: require('../assets/赛事/popUp/赛事介绍锦标赛.png'),
         },
       ],
     };
@@ -104,23 +112,31 @@ export default {
 </script>
 
 <style scoped>
+.head-img {
+  height: 350px;
+}
+.background {
+  background-image: url('../assets/赛事/赛事.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+}
+/* .GamePage {
+} */
 .m-3 {
   margin: 30px auto;
 }
-.play {
-  position: absolute;
-  width: 80px;
-  height: 80px;
-  left: 135px;
-  top: 75px;
-  z-index: 99;
-}
+
 .img-size {
-  height: 2rem;
+  height: 2.7rem;
   width: auto;
 }
 .container {
   width: 90%;
   padding: 5px 0;
+}
+.center {
+  justify-content: center;
+  text-align: center;
 }
 </style>

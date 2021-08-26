@@ -50,7 +50,7 @@ export default {
       },
       someList: [
         {
-          img: 'https://www.jixiang.cn/img/last1.jpg',
+          img: require('../assets/首页/吉祥街机捕鱼.png'),
           title: '吉祥斗地主',
           button: '直接下载',
           id: 1,
@@ -60,7 +60,7 @@ export default {
           },
         },
         {
-          img: 'https://www.jixiang.cn/img/last1.jpg',
+          img: require('../assets/首页/斗地主.png'),
           title: '吉祥四川麻将',
           button: '直接下载',
           id: 2,
@@ -70,10 +70,20 @@ export default {
           },
         },
         {
-          img: 'https://www.jixiang.cn/img/last1.jpg',
+          img: require('../assets/首页/吉祥麻将.png'),
           title: '吉祥麻将',
           button: '直接下载',
           id: 3,
+          style: {
+            width: '400px',
+            border: '1px solid lightgrey',
+          },
+        },
+        {
+          img: require('../assets/首页/吉祥四川麻将.png'),
+          title: '吉祥麻将',
+          button: '直接下载',
+          id: 4,
           style: {
             width: '400px',
             border: '1px solid lightgrey',

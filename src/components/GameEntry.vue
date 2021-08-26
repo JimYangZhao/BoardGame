@@ -9,26 +9,68 @@
         <p>{{ contents }}</p>
       </div>
       <div class="btn">
-        <button>{{ button }}</button>
+        <van-button round size="normal" style="white-space: nowrap;" class="goDownload" @click="showPopup">{{ button }}</van-button>
+        <van-popup v-model="show" closeable close-icon-position="top-right">
+          <img :src="popupContents" height="700px" width="auto" alt="popupContents" />
+        </van-popup>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import Vue from 'vue';
+import { Popup } from 'vant';
+
+Vue.use(Popup);
 export default {
-  props: ['title', 'contents'],
+  props: ['title', 'contents', 'popupContents'],
   data() {
     return {
       button: '查看详情',
+      show: false,
     };
+  },
+  methods: {
+    showPopup() {
+      this.show = true;
+    },
   },
 };
 </script>
 
 <style scoped>
+.van-popup {
+  background-color: transparent;
+  height: 10.22rem;
+  display: flex;
+  align-items: flex-end;
+}
+.van-popup__close-icon {
+  position: absolute;
+  z-index: 1;
+  color: #7b160b;
+  font-size: 40px;
+  cursor: pointer;
+  font-weight: 900;
+}
+h2 {
+  margin: 0px;
+}
+p {
+  margin: 0px;
+}
+.title {
+  color: #f9d6b9;
+}
+.contents {
+  color: #f9d6b9;
+}
 .gameEntry {
-  background: red;
+  background-image: url('../assets/赛事/赛事条幅.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .space {
   flex: 5%;

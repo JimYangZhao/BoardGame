@@ -13,6 +13,9 @@
         </ol>
       </ul>
     </div>
+    <div class="container p-3">
+      <van-button class="news-bottom-text" size="large">查看更多</van-button>
+    </div>
   </div>
 </template>
 
@@ -71,11 +74,21 @@ export default {
   align-items: center;
   flex: 20%;
   justify-content: center;
-  background: #ce182e;
+  background-image: url('../assets/首页/推荐.png');
   height: 60px;
   color: white;
+  z-index: 999;
+  overflow: visible;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 15px;
 }
 .van-notice-bar {
   flex: 80%;
+}
+.news-bottom-text {
+  color: #9f9fa3;
+  background: #f1f2f7;
+  font-size: 15px;
 }
 </style>
