@@ -226,3 +226,14 @@ li {
   cursor: pointer;
   font-weight: 900;
 }
+.van-dropdown-item__option {
+  text-align: center;
+  font-size: 0.4rem;
+  line-height: 1.2rem;
+}
+.van-cell__value {
+  display: none;
+}
+.van-dropdown-item {
+  top: 1.7rem !important;
+}

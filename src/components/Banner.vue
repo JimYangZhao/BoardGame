@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Header menu="菜单按钮" class="positionTop" />
     <van-swipe class="my-swipe" :autoplay="5000" indicator-color="#ce182e" height="850" color="black">
       <van-swipe-item v-for="(image, images) in images" :key="images.id">
         <div class="banner">
@@ -19,6 +20,7 @@ import { Popup } from 'vant';
 import { NavBar } from 'vant';
 import { Swipe, SwipeItem } from 'vant';
 import { Lazyload } from 'vant';
+import Header from './Header';
 Vue.use(Vant);
 Vue.use(NavBar);
 Vue.use(Swipe);
@@ -28,6 +30,9 @@ Vue.use(Popup);
 
 export default {
   props: [],
+  components: {
+    Header,
+  },
   data() {
     return {
       images: [
@@ -63,6 +68,13 @@ export default {
 </script>
 
 <style scoped>
+.positionTop {
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+}
+
 .btn_position {
   border-radius: 20px;
   position: absolute;

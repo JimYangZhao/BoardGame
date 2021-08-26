@@ -1,6 +1,6 @@
 <template>
   <div class="frontpage" title="首页" id="home">
-    <Header menu="菜单按钮" />
+    <!-- <Header menu="菜单按钮" /> -->
     <Banner />
     <Download title="分享快乐十一年" />
     <News title="推荐吉祥街机" leftTitle="推荐" />
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Header from '../components/Header';
+// import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Download from '../components/Download';
 import News from '../components/News';
@@ -41,7 +41,7 @@ export default {
     },
   },
   components: {
-    Header,
+    // Header,
     Footer,
     Download,
     News,

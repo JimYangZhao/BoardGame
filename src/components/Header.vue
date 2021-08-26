@@ -6,19 +6,19 @@
           <a href="/"><img v-bind:src="logoSrc" alt="logo"/></a>
         </li>
         <li style="float:right;height:100px;">
-          <van-cell @click="showPopup" :get-container="getContainer" class="menuBtn">{{ menu }}</van-cell>
+          <van-cell @click="showPopup" :get-container="getContainer" class="menuBtn"><span class="d-flex white">三</span> </van-cell>
           <van-popup v-model="show" class="popupMenu">
             <ul id="navList">
               <li v-for="item in nav" :key="item.id">
-                <router-link :to="{ name: item.name }" class="sun_active"
-                  ><p>{{ item.name }}</p>
-                  <hr style="width: 90%;"
-                /></router-link>
+                <router-link :to="{ name: item.name }" class="sun_active">
+                  <p>{{ item.name }}</p>
+                  <hr style="width: 90%;" />
+                </router-link>
               </li>
             </ul>
           </van-popup>
           <van-dropdown-menu>
-            <van-dropdown-item v-model="value1" :options="option1" />
+            <van-dropdown-item v-model="value1" :options="option1" class="textBigger" />
           </van-dropdown-menu>
         </li>
       </ul>
@@ -91,6 +91,9 @@ export default {
         { text: '吉祥赛事', value: 3, id: 3, name: '吉祥赛事' },
         { text: '活动商品', value: 4, id: 4, name: '游戏产品' },
         { text: '联系我们', value: 5, id: 5, name: '联系我们' },
+        { text: '斗地主', value: 6, id: 6, name: '斗地主' },
+        { text: '麻将', value: 7, id: 7, name: '麻将' },
+        { text: '四川麻将', value: 8, id: 8, name: '四川麻将' },
       ],
     };
   },
@@ -98,8 +101,16 @@ export default {
 </script>
 
 <style scoped>
+.textBigger {
+  font-size: 1rem;
+}
+.white {
+  color: black;
+  justify-content: center;
+  align-content: center;
+}
 .background-nav {
-  background: #f5f0ea;
+  background: #f5f0eae1;
 }
 ol {
   margin: 15px 0;
