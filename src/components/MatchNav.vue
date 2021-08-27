@@ -115,11 +115,12 @@ ol {
 }
 .menuBtn {
   font-size: 10px;
-  width: 30px;
-  height: auto;
+  width: 0.8rem;
+  height: 0.7rem;
   background-color: transparent;
   border: 1px solid gray;
   margin-left: 15px;
+  color: white;
 }
 .van-cell::after {
   border-bottom: 0;

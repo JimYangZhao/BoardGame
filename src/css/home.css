@@ -194,11 +194,11 @@ li {
   padding: 20px 0;
   margin: auto;
 }
-.position-bottom {
+/* .position-bottom {
   position: absolute;
   bottom: 0%;
   width: 100%;
-}
+} */
 .goDownload {
   white-space: nowrap;
   padding: 5px 10px;
@@ -216,7 +216,7 @@ li {
   transform: translateX(-50%) scale(3.5);
 }
 .GameNavHeight {
-  height: 1.7rem;
+  height: 1.3rem;
 }
 .van-popup__close-icon {
   position: absolute;
