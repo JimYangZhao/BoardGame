@@ -3,14 +3,14 @@
     <!-- 上半部分 -->
     <div class="d-flex flex-v p-3">
       <!-- <img :src="urlImage" alt="urlImage" class="mx-ht" /> -->
-      <van-button type="default" class="btn-footer" v-bind:style="{ backgroundColor: bgColor, color: fontColor }">关于吉祥</van-button>
+      <router-link to="/about"><van-button type="default" class="btn-footer" v-bind:style="{ backgroundColor: bgColor, color: fontColor }">关于吉祥</van-button></router-link>
     </div>
     <!-- 下半部分 -->
     <div class="dark-footer">
       <div class="d-flex container">
-        <div v-for="item in boxInfo" :key="item.id">
-          <img :src="item.src" alt="image" />
-        </div>
+        <img src="../assets/首页/公众号按钮.png" alt="image" @click="showPopup" />
+        <img src="../assets/首页/视频号按钮.png" alt="image" @click="showPopup1" />
+        <img src="../assets/首页/抖音按钮.png" alt="image" @click="showPopup2" />
       </div>
       <div class="container">
         <p style="color: white; font-size:20px;">
@@ -33,6 +33,9 @@
         </p>
       </div>
     </div>
+    <van-popup v-model="show2"><img src="../assets/首页/抖音.png" alt="抖音"/></van-popup>
+    <van-popup v-model="show"><img src="../assets/首页/公众号.png" alt="公众号"/></van-popup>
+    <van-popup v-model="show1"><img src="../assets/首页/视频号.png" alt="视频号"/></van-popup>
   </div>
 </template>
 
@@ -43,23 +46,22 @@ Vue.use(Vant);
 
 export default {
   props: ['bgColor', 'fontColor'],
+  methods: {
+    showPopup() {
+      this.show = true; // 抖音
+    },
+    showPopup1() {
+      this.show1 = true; // 公众号
+    },
+    showPopup2() {
+      this.show2 = true; // 视频号
+    },
+  },
   data() {
     return {
-      // urlImage: require('../assets/尾部/吉祥创造更多快乐.png'),
-      boxInfo: [
-        {
-          id: 0,
-          src: require('../assets/首页/公众号按钮.png'),
-        },
-        {
-          id: 1,
-          src: require('../assets/首页/视频号按钮.png'),
-        },
-        {
-          id: 2,
-          src: require('../assets/首页/抖音按钮.png'),
-        },
-      ],
+      show: false,
+      show1: false,
+      show2: false,
     };
   },
 };

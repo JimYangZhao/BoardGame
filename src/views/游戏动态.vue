@@ -54,7 +54,7 @@ export default {
   margin-left: 0.4rem;
 }
 .contents {
-  min-height: 5rem;
+  min-height: 10rem;
   width: 90%;
   margin: auto;
 }

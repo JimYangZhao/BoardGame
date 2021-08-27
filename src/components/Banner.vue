@@ -40,26 +40,31 @@ export default {
           id: 0,
           srcImage: require('../assets/首页/捕鱼轮播.png'),
           buttons: '查看详情',
+          link: '',
         },
         {
           id: 1,
           srcImage: require('../assets/首页/斗地主轮播.png'),
           buttons: '查看详情',
+          link: '',
         },
         {
           id: 2,
           srcImage: require('../assets/首页/吉祥11年轮播.png'),
           buttons: '查看详情',
+          link: '',
         },
         {
           id: 3,
           srcImage: require('../assets/首页/吉祥麻将轮播.png'),
           buttons: '查看详情',
+          link: '',
         },
         {
           id: 4,
           srcImage: require('../assets/首页/四川麻将轮播.png'),
           buttons: '查看详情',
+          link: '',
         },
       ],
     };

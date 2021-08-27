@@ -46,9 +46,7 @@ export default {
   display: flex;
   align-items: flex-end;
 }
-.van-popup__close-icon--top-right {
-  top: 0px;
-}
+
 .van-button__text {
   font-size: unset;
 }

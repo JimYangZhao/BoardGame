@@ -20,7 +20,7 @@
       </ul>
     </div>
     <div class="container p-3">
-      <van-button class="news-bottom-text" size="large">查看更多</van-button>
+      <router-link to="/news"><van-button class="news-bottom-text" size="large">查看更多</van-button></router-link>
     </div>
   </div>
 </template>

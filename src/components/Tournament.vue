@@ -16,7 +16,9 @@
       </van-grid-item>
     </van-grid>
     <!-- <button v-if="noMore" class="btn-grey">{{ bottom_button }}</button> -->
-    <button class="btn-red">{{ bottom_button }}</button>
+    <router-link to="/match"
+      ><button class="btn-red">{{ bottom_button }}</button></router-link
+    >
   </div>
 </template>
 

@@ -107,6 +107,9 @@ export default {
 </script>
 
 <style scoped>
+.van-cell__value {
+  display: block;
+}
 .background-matchnav {
   background: #262625;
 }

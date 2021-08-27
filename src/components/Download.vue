@@ -21,6 +21,7 @@ import Vue from 'vue';
 import { Button } from 'vant';
 import 'vant/lib/index.css';
 import '../css/home.css';
+import axios from 'axios';
 
 Vue.use(Button);
 Vue.use(Vant);
@@ -37,6 +38,7 @@ export default {
     return {
       value1: 0,
       value2: 'a',
+      info: null,
       options: {
         currentPage: 1,
         itemAnimation: true,
@@ -90,6 +92,9 @@ export default {
           },
         },
       ],
+      mounted() {
+        axios.get('http://10.10.3.198:9081/api/product/list').then((response) => (this.info = response));
+      },
     };
   },
 };
