@@ -1,13 +1,13 @@
 <template>
   <div class="footer">
     <!-- 上半部分 -->
-    <div class="d-flex flex-v p-3">
+    <div class="d-flex flex-v p-3 center">
       <img :src="urlImage" alt="urlImage" class="mx-ht" />
       <router-link to="/about"><van-button type="default" class="btn-footer">关于吉祥</van-button></router-link>
     </div>
     <!-- 下半部分 -->
     <div class="dark-footer">
-      <div class="d-flex container">
+      <div class="d-flex container justify-around">
         <img src="../assets/首页/公众号按钮.png" alt="image" @click="showPopup" />
         <img src="../assets/首页/视频号按钮.png" alt="image" @click="showPopup1" />
         <img src="../assets/首页/抖音按钮.png" alt="image" @click="showPopup2" />
@@ -102,7 +102,7 @@ label,
   background-color: #ce182e;
   border-color: transparent;
   border-radius: 20px;
-  font-size: 10px;
+  font-size: 15px;
   padding: 15px 25px;
   margin-top: 17px;
 }

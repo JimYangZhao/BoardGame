@@ -4,33 +4,30 @@
 button {
   font-size: 0.45rem;
 }
-.van-button__text {
-  font-size: 0.45rem;
+.bot-free {
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 .d-flex {
   display: flex;
   margin: auto;
-  justify-content: space-around;
+  /* justify-content: space-around; */
+  /* align-items: center; */
+}
+.center {
+  justify-content: center;
   align-items: center;
+  text-align: center;
+  margin: auto;
+}
+.justify-around {
+  justify-content: space-around;
 }
 .popupMenu {
   color: white;
   background-color: transparent;
   font-size: 30px;
 }
-.item1 {
-  grid-area: header;
-}
-.item2 {
-  grid-area: menu;
-}
-.item3 {
-  grid-area: main;
-}
-.item4 {
-  grid-area: footer;
-}
-
 .nav > ul {
   list-style-type: none;
   margin: 0;
@@ -90,7 +87,7 @@ button {
   border-radius: 20px;
   border-color: white;
   /* width: 75%; */
-  padding: 10px 40px;
+  padding: 7px 40px;
   margin: 3px 0px;
 }
 .btn-#ce182e {
@@ -128,9 +125,9 @@ button {
   font-size: 30px;
   padding: 25px 20px;
 }
-.title {
+/* .title {
   margin: 3vh;
-}
+} */
 .my-swipe .van-swipe-item {
   color: #fff;
   font-size: 20px;
@@ -170,9 +167,68 @@ li {
   transform: scale(1);
   z-index: 999;
 }
-.sun_active {
-  color: white;
+.van-dropdown-menu__title {
+  padding: 0;
 }
+/* 重复 */
+.van-dropdown-menu__title::after {
+  position: relative;
+  font-size: 0.3rem;
+  margin-top: 0;
+  top: unset;
+  right: unset;
+  -webkit-transorm: unset;
+  transform: unset;
+  opacity: 1;
+  content: '三';
+  border: 0;
+  font-weight: 900;
+}
+
+/* 重复 */
+.van-dropdown-menu__title::after {
+  position: relative;
+  font-size: 0.3rem;
+  margin-top: 0;
+  top: unset;
+  right: unset;
+  -webkit-transorm: unset;
+  transform: unset;
+  opacity: 1;
+  content: '三';
+  color: white;
+  border: 0;
+  font-weight: 900;
+}
+.van-dropdown-menu__bar {
+  background-color: transparent;
+  border: 1px solid white;
+  width: 0.7rem;
+  height: 0.6rem;
+  margin-left: 0.3rem;
+}
+#general .van-dropdown-menu__bar {
+  background-color: transparent;
+  border: unset;
+  width: 0.7rem;
+  height: 0.6rem;
+  margin-left: 0.3rem;
+}
+#general .van-dropdown-menu__title::after {
+  position: relative;
+  font-size: 0.3rem;
+  margin-top: 0;
+  top: unset;
+  right: unset;
+  -webkit-transorm: unset;
+  transform: unset;
+  opacity: 1;
+  content: '三';
+  color: black;
+  border: 0;
+  font-weight: 900;
+}
+/* 重复结束 */
 .mx-ht {
   max-height: 50px;
   overflow: hidden;
@@ -216,7 +272,7 @@ li {
   transform: translateX(-50%) scale(3.5);
 }
 .GameNavHeight {
-  height: 1.3rem;
+  height: 1.6rem;
 }
 .van-popup__close-icon {
   position: absolute;
@@ -242,4 +298,17 @@ li {
 }
 .van-popup__close-icon--top-right {
   top: 0px;
+}
+.slider-item {
+  display: flex;
+}
+.van-list__finished-text {
+  font-size: 1em;
+}
+.align-center {
+  align-items: center;
+  align-content: center;
+}
+.w-100 {
+  width: 100%;
 }

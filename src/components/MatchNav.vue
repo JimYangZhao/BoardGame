@@ -8,25 +8,20 @@
         </li>
         <li style="float:right;height:100px;">
           <!-- 按钮 -->
-          <van-button round size="large" style="white-space: nowrap;" class="goDownload">立即下载</van-button>
+          <van-button size="large" style="white-space: nowrap; border-radius: 5px;" class="goDownload">立即下载</van-button>
           <!-- 菜单 -->
-          <van-cell @click="showPopup" :get-container="getContainer" class="menuBtn"><span class="d-flex white">三</span></van-cell>
-          <van-popup v-model="show" class="popupMenu">
-            <!-- 菜单内容 -->
-            <ul id="navList">
-              <li v-for="item in nav" :key="item.id">
-                <router-link :to="{ name: item.name }" class="sun_active"
-                  ><p>{{ item.name }}</p>
-                  <hr style="width: 90%;"
-                /></router-link>
-              </li>
-            </ul>
-          </van-popup>
-          <!-- <van-dropdown-menu>
-            <div v-for="item in option1" :key="item.id">
-            <van-dropdown-item v-model="value1" :options="option1" />
-            </div>
-          </van-dropdown-menu> -->
+          <van-dropdown-menu>
+            <van-dropdown-item v-model="value1" class="textBigger">
+              <ul id="navList">
+                <div class="white-space"></div>
+                <li v-for="item in nav" :key="item.id" class="border-line">
+                  <router-link :to="{ name: item.name }" class="sun_active">
+                    <p>{{ item.name }}</p>
+                  </router-link>
+                </li>
+              </ul>
+            </van-dropdown-item>
+          </van-dropdown-menu>
         </li>
       </ul>
     </div>
@@ -84,29 +79,33 @@ export default {
         { id: 3, name: '吉祥赛事' },
         { id: 4, name: '游戏产品' },
         { id: 5, name: '联系我们' },
-        { id: 6, name: '斗地主' },
-        { id: 7, name: '麻将' },
-        { id: 8, name: '四川麻将' },
       ],
       chose: 0,
-      // logoSrc: require('../assets/赛事/抬头2.png'),
-      // DropDown Menu
       value1: 0,
       value2: 'a',
-      option1: [
-        { text: '首页', value: 0, id: 0, name: '首页' },
-        { text: '关于吉祥', value: 1, id: 1, name: '关于吉祥' },
-        { text: '游戏动态', value: 2, id: 2, name: '游戏动态' },
-        { text: '吉祥赛事', value: 3, id: 3, name: '吉祥赛事' },
-        { text: '活动商品', value: 4, id: 4, name: '游戏产品' },
-        { text: '活动商品', value: 5, id: 5, name: '联系我们' },
-      ],
     };
   },
 };
 </script>
 
 <style scoped>
+.border-line {
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  padding: 0.3rem;
+}
+#navList {
+  display: flex;
+  flex-direction: column;
+}
+.textBigger {
+  font-size: 0.5rem;
+}
+.sun_active {
+  color: black;
+}
 .van-cell__value {
   display: block;
 }
@@ -148,4 +147,25 @@ p {
 .nav > ul > li {
   border-right: 0;
 }
+/* .van-dropdown-menu__title::after {
+  position: relative;
+  font-size: 0.3rem;
+  margin-top: 0;
+  top: unset;
+  right: unset;
+  -webkit-transorm: unset;
+  transform: unset;
+  opacity: 1;
+  content: '三';
+  color: white;
+  border: 0;
+  font-weight: 900;
+}
+.van-dropdown-menu__bar {
+  background-color: transparent;
+  border: 1px solid white;
+  width: 0.7rem;
+  height: 0.6rem;
+  margin-left: 0.3rem;
+} */
 </style>

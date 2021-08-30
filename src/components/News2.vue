@@ -1,26 +1,24 @@
 <template>
   <div class="news">
-    <!-- <div class="d-flex container ht-2"></div> -->
-    <!-- <p class="leftTitle">{{ leftTitle }}</p> -->
-    <div class="container bot-free">
-      <div v-for="item in info.data.data.data" :key="item.id" class="d-flex w-100 align-center">
+    <div class="d-flex container ht-2">
+      <!-- <p class="leftTitle">{{ leftTitle }}</p> -->
+      <div v-for="item in info.data.data.data" :key="item.id" class="d-flex">
         <p class="leftTitle">{{ item.title }}</p>
-        <van-notice-bar class="title" :text="item.description" />
+        <van-notice-bar class="title" scrollable :text="item.description" />
       </div>
     </div>
-
-    <div class="d-flex flex-vertical center">
-      <hr style="width: 81%; margin: auto" />
-      <ul v-for="item in comments.data.data.data" :key="item.id" style="width:90%;">
+    <div class="d-flex flex-vertical">
+      <ul v-for="item in info.data.data.data" :key="item.id" style="width:90%;">
         <!-- li v-for="(i, index) in data" v-if="index < 2" v-text="i" -->
-        <ol class="news-contents">
-          <p>{{ item.description }}</p>
+        <ol style="width: 90%; margin: auto">
+          <hr />
+          <p>{{ item.title }}</p>
           <hr />
         </ol>
       </ul>
     </div>
     <div class="container p-3">
-      <router-link to="/news"><van-button class="news-bottom-text" size="large">查看更多</van-button></router-link>
+      <van-button class="news-bottom-text" size="large">查看更多</van-button>
     </div>
   </div>
 </template>
@@ -44,7 +42,6 @@ export default {
     return {
       activeName: 'a',
       info: null,
-      comments: null,
       news: [
         {
           id: 0,
@@ -64,44 +61,14 @@ export default {
 
   mounted() {
     axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=popular').then((response) => (this.info = response));
-    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=news').then((response) => (this.comments = response));
   },
 };
 </script>
 
 <style scoped>
-.news-contents {
-  width: 90%;
-  margin: auto;
-  font-size: 14px;
-}
-.news-contents:first-child {
-  border-top: 1px solid #f1f2f6;
-}
-
-.leftTitle {
-  display: flex;
-  align-items: center;
-  flex: 20%;
-  justify-content: center;
-  background-image: url('../assets/首页/推荐.png');
-  height: 1rem;
-  color: white;
-  overflow: visible;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: right;
-  background-color: #f1f2f7;
-  font-size: 15px;
-}
-.background-grey {
-  background: #f1f2f6;
-  height: 1rem;
-}
 .ht-2 {
-  height: 0rem;
+  height: 2rem;
 }
-
 p {
   text-align: left;
 }
@@ -109,18 +76,29 @@ p {
   flex-direction: column;
 }
 .container {
-  width: 81%;
+  width: 90%;
 }
 .title {
-  margin: 10px 0;
+  margin: 30px 0;
 }
 .van-notice-bar {
-  height: 1rem;
-  font-size: 0.5rem;
-  background-color: #f1f2f7;
-  color: black;
+  height: 60px;
+  font-size: 20px;
 }
-
+.leftTitle {
+  display: flex;
+  align-items: center;
+  flex: 20%;
+  justify-content: center;
+  background-image: url('../assets/首页/推荐.png');
+  height: 60px;
+  color: white;
+  z-index: 999;
+  overflow: visible;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 15px;
+}
 .van-notice-bar {
   flex: 80%;
 }

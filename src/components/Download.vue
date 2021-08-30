@@ -1,13 +1,23 @@
 <template>
   <div class="download">
-    <!-- <h3>吉祥 分享快乐<span style="color:red;">十一年</span></h3> -->
-    <h2><span style="color: red;">吉祥，</span>{{ title }}</h2>
-    <div style="width:100%;height:400px">
-      <slider ref="slider" :options="options">
+    <h1>吉祥, 分享快乐<span style="color:red;">十一年</span></h1>
+    <div style="width:100%;height:600px">
+      <!-- <slider ref="slider" :options="options">
         <slideritem v-for="(item, index) in someList" :key="index" :style="item.style">
-          <img v-bind:src="item.img" alt="image" style="height: 200px;margin-top: 30px;" />
-          <p style="color:black">{{ item.title }}</p>
-          <van-button type="default" class="oneClickDL">{{ item.button }}</van-button>
+          <img v-bind:src="item.img" alt="image" style="height: 250px;margin-top: 30px;" />
+          <p style="color:black; margin: 0.5rem">{{ item.title }}</p>
+          <router-link :to="item.link">
+            <van-button type="default" class="oneClickDL">{{ item.button }}</van-button>
+          </router-link>
+        </slideritem>
+      </slider> -->
+      <slider ref="slider" :options="options">
+        <slideritem v-for="item in info.data.data" :key="item.id" style="width: 400px">
+          <a :href="item.ios_url">
+            <img :src="item.thumb" alt="image" style="height: 250px;" />
+            <p class="game-title">{{ item.name }}</p>
+            <van-button type="default" class="oneClickDL">直接下载</van-button>
+          </a>
         </slideritem>
       </slider>
     </div>
@@ -31,9 +41,7 @@ export default {
     slider,
     slideritem,
   },
-  props: {
-    title: String,
-  },
+  props: {},
   data() {
     return {
       value1: 0,
@@ -50,64 +58,39 @@ export default {
         // thresholdTime: 300,
         // loop: true,
       },
-      someList: [
-        {
-          img: require('../assets/首页/吉祥街机捕鱼.png'),
-          title: '吉祥斗地主',
-          button: '直接下载',
-          id: 1,
-          style: {
-            width: '400px',
-            border: '1px solid lightgrey',
-          },
-        },
-        {
-          img: require('../assets/首页/斗地主.png'),
-          title: '吉祥四川麻将',
-          button: '直接下载',
-          id: 2,
-          style: {
-            width: '400px',
-            border: '1px solid lightgrey',
-          },
-        },
-        {
-          img: require('../assets/首页/吉祥麻将.png'),
-          title: '吉祥麻将',
-          button: '直接下载',
-          id: 3,
-          style: {
-            width: '400px',
-            border: '1px solid lightgrey',
-          },
-        },
-        {
-          img: require('../assets/首页/吉祥四川麻将.png'),
-          title: '吉祥麻将',
-          button: '直接下载',
-          id: 4,
-          style: {
-            width: '400px',
-            border: '1px solid lightgrey',
-          },
-        },
-      ],
-      mounted() {
-        axios.get('http://10.10.3.198:9081/api/product/list').then((response) => (this.info = response));
-      },
     };
+  },
+  mounted() {
+    axios.get('http://10.10.3.198:9081/api/product/list').then((response) => (this.info = response));
   },
 };
 </script>
 
 <style scoped>
+.game-title {
+  color: black;
+  margin: 0.5rem;
+  font-size: 18px;
+}
+.background {
+  background-size: cover;
+}
+.van-button--normal {
+  font-size: 0.4rem;
+}
 .slider-item {
   flex-direction: column;
 }
 .oneClickDL {
-  padding: 10px;
+  padding: 0.5rem 0.7rem;
   background-color: #ce182e;
   color: white;
   border-radius: 20px;
+}
+.download {
+  margin-top: 1rem;
+}
+.slider-active {
+  background-color: #f2f3f5;
 }
 </style>

@@ -5,21 +5,25 @@
         <li>
           <a href="/"><img v-bind:src="logoSrc" alt="logo"/></a>
         </li>
-        <li style="float:right;height:100px;">
-          <van-cell @click="showPopup" :get-container="getContainer" class="menuBtn"><span class="d-flex white">三</span> </van-cell>
-          <van-popup v-model="show" class="popupMenu">
-            <ul id="navList">
-              <li v-for="item in nav" :key="item.id">
-                <router-link :to="{ name: item.name }" class="sun_active">
-                  <p>{{ item.name }}</p>
-                  <hr style="width: 90%;" />
-                </router-link>
-              </li>
-            </ul>
-          </van-popup>
-          <van-dropdown-menu>
-            <van-dropdown-item v-model="value1" :options="option1" class="textBigger" />
+        <li style="float:right;height:100px; margin-right: 0.7rem;">
+          <!-- 后期准备加上Menu Icon转换，用这个click closeIcon -->
+          <van-dropdown-menu id="general" @click="closeIcon">
+            <van-dropdown-item v-model="value1" class="textBigger">
+              <ul id="navList">
+                <div class="white-space"></div>
+                <li v-for="item in nav" :key="item.id" class="border-line">
+                  <router-link :to="{ name: item.name }" class="sun_active">
+                    <p>{{ item.name }}</p>
+                  </router-link>
+                </li>
+              </ul>
+            </van-dropdown-item>
           </van-dropdown-menu>
+          <!-- <div class="menu-icon-wrapper open" @click="toggle(this)">
+            <div class="menu-icon-first"></div>
+            <div class="menu-icon-second"></div>
+            <div class="menu-icon-thrid"></div>
+          </div> -->
         </li>
       </ul>
     </div>
@@ -75,34 +79,32 @@ export default {
         { id: 3, name: '吉祥赛事' },
         { id: 4, name: '游戏产品' },
         { id: 5, name: '联系我们' },
-        { id: 6, name: '斗地主' },
-        { id: 7, name: '麻将' },
-        { id: 8, name: '四川麻将' },
       ],
       chose: 0,
       logoSrc: 'https://jixiang.cn/img/logo.png',
-      // DropDown Menu
-      value1: 0,
-      value2: 'a',
-      option1: [
-        { text: '首页', value: 0, id: 0, name: '首页' },
-        { text: '关于吉祥', value: 1, id: 1, name: '关于吉祥' },
-        { text: '游戏动态', value: 2, id: 2, name: '游戏动态' },
-        { text: '吉祥赛事', value: 3, id: 3, name: '吉祥赛事' },
-        { text: '活动商品', value: 4, id: 4, name: '游戏产品' },
-        { text: '联系我们', value: 5, id: 5, name: '联系我们' },
-        { text: '斗地主', value: 6, id: 6, name: '斗地主' },
-        { text: '麻将', value: 7, id: 7, name: '麻将' },
-        { text: '四川麻将', value: 8, id: 8, name: '四川麻将' },
-      ],
+      value1: 'sdfkjsfdlkjf',
     };
   },
 };
 </script>
 
 <style scoped>
+.border-line {
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-top: 0px;
+  border-right: 0px;
+  border-left: 0px;
+  padding: 0.3rem;
+}
+.white-space {
+  height: 0.2rem;
+}
+#navList {
+  display: flex;
+  flex-direction: column;
+}
 .textBigger {
-  font-size: 1rem;
+  font-size: 0.5rem;
 }
 .white {
   color: black;
@@ -133,5 +135,48 @@ p {
 }
 .nav > ul > li {
   border-right: 0;
+}
+.sun_active {
+  color: black;
+}
+.van-dropdown-menu__item {
+  width: 100%;
+}
+.van-dropdown-menu {
+  width: 0.8rem;
+}
+
+/* 新添加 */
+
+.menu-icon-wrapper {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.menu-icon-first,
+.menu-icon-second,
+.menu-icon-thrid {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* 旋转第一条横线 */
+.close .menu-icon-first {
+  -webkit-transform: rotate(-45deg) translate(-8px, 7px);
+  transform: rotate(-45deg) translate(-8px, 7px);
+}
+
+/* 隐藏第二条横线 */
+.close .menu-icon-second {
+  opacity: 0;
+}
+
+/* 旋转第三条横线 */
+.close .menu-icon-thrid {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px);
 }
 </style>

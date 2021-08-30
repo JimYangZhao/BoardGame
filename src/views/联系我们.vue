@@ -1,8 +1,8 @@
 <template>
   <div class="联系我们">
     <Header menu="菜单按钮" />
-    <div class="d-flex flex-v">
-      <div class="p-3"><img src="../assets/联系我们/联系我们文字.png" alt="联系我们文字" /></div>
+    <div class="d-flex flex-v center">
+      <div class="p-3" style="padding-bottom: 0.2rem;"><img src="../assets/联系我们/联系我们文字.png" alt="联系我们文字" /></div>
       <div class="map-conf overflow border-r">
         <img :src="images" alt="img" class="" />
       </div>
@@ -95,5 +95,8 @@ h1 {
 }
 h3 {
   margin: 5px 0;
+}
+.p-3 {
+  padding: 0.5rem 0 1rem 0;
 }
 </style>

@@ -2,9 +2,9 @@
   <div class="frontpage" title="首页" id="home">
     <!-- <Header menu="菜单按钮" /> -->
     <Banner />
-    <Download title="分享快乐十一年" />
+    <Download />
     <News title="推荐吉祥街机" leftTitle="推荐" />
-    <Tournament bottom_button="了解更多赛事" title="吉祥赛事" />
+    <Tournament bottom_button="了解更多赛事" />
     <Footer />
   </div>
 </template>
@@ -44,4 +44,12 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+/* .background {
+  background-image: url('../assets/首页/首页背景.png');
+  height: 100%;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+} */
+</style>

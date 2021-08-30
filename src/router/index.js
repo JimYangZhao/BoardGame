@@ -9,7 +9,7 @@ import 吉祥赛事 from '@/views/吉祥赛事';
 import 斗地主 from '@/views/斗地主';
 import 麻将 from '@/views/麻将';
 import 四川麻将 from '@/views/四川麻将';
-
+import GameActivity from '@/views/subdomain/GameActivity';
 
 Vue.use(Router)
 
@@ -38,6 +38,11 @@ export default new Router({
             path:'/news',
             name: '游戏动态',
             component: 游戏动态
+        },
+        {
+            path:'/news/GameActivity',
+            name: '游戏动态自页面',
+            component: GameActivity
         },
         {
             path:'/match',
@@ -69,6 +74,7 @@ export default new Router({
             name: '四川麻将',
             component: 四川麻将
         },
+        
         {
             path: "*", // 这个路由可以匹配所有的路径 /list
             name: "404",

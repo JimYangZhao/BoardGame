@@ -1,21 +1,20 @@
 <template>
   <div class="Tournament p-3">
-    <img src="../assets/首页/吉祥赛事.png" alt="吉祥赛事" />
+    <!-- <img src="../assets/首页/吉祥赛事.png" alt="吉祥赛事" /> -->
     <van-grid class="grid-container">
-      <van-grid-item class="item1">
-        <img height="100%" src="../assets/首页/吉祥赛事1.png" alt="吉祥赛事1" />
-      </van-grid-item>
-      <van-grid-item class="item2">
-        <img height="100%" src="../assets/首页/吉祥赛事4.png" alt="吉祥赛事2" />
-      </van-grid-item>
-      <van-grid-item class="item3">
-        <img height="100%" src="../assets/首页/吉祥赛事3.png" alt="吉祥赛事3" />
-      </van-grid-item>
-      <van-grid-item class="item4">
-        <img height="100%" src="../assets/首页/吉祥赛事2.png" alt="吉祥赛事4" />
-      </van-grid-item>
+      <div v-for="item in info.data.data.data.slice(0, 4)" :key="item.id" class="item">
+        <van-grid-item>
+          <img width="100%" :src="item.thumb" alt="thumb_img" @click="showPopup" />
+          <van-popup v-model="show">
+            <video width="700" controls>
+              <source type="video/mp4" :src="item.url" />
+              <!-- <source type="video/mp4" src="https://jxcloudimg.oss-cn-beijing.aliyuncs.com/video/di2qi.mp4" /> -->
+            </video>
+          </van-popup>
+        </van-grid-item>
+      </div>
     </van-grid>
-    <!-- <button v-if="noMore" class="btn-grey">{{ bottom_button }}</button> -->
+
     <router-link to="/match"
       ><button class="btn-red">{{ bottom_button }}</button></router-link
     >
@@ -27,6 +26,10 @@ import Vant from 'vant';
 import Vue from 'vue';
 import { Grid, GridItem } from 'vant';
 import { Button } from 'vant';
+import axios from 'axios';
+import { Popup } from 'vant';
+
+Vue.use(Popup);
 Vue.use(Button);
 Vue.use(Vant);
 Vue.use(Grid);
@@ -36,9 +39,19 @@ export default {
     bottom_button: String,
     title: String,
   },
+  mounted() {
+    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=match').then((response) => (this.info = response));
+  },
+  methods: {
+    showPopup() {
+      this.show = true;
+    },
+  },
   data() {
     return {
       noMore: true,
+      show: false,
+      info: null,
     };
   },
 };
@@ -51,7 +64,28 @@ export default {
 .van-grid-item__content {
   padding: 0;
 }
-.grid-container {
+/* .grid-container {
   grid-gap: 0;
+} */
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu menu menu main main main'
+    'menu menu menu footer footer footer';
+  grid-gap: 10px;
+  padding: 10px;
+}
+.item:nth-child(n + 1) {
+  grid-area: header;
+}
+.item:nth-child(n + 2) {
+  grid-area: menu;
+}
+.item:nth-child(3) {
+  grid-area: main;
+}
+.item:nth-child(4) {
+  grid-area: footer;
 }
 </style>

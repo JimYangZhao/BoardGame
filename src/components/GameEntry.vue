@@ -1,6 +1,6 @@
 <template>
-  <div class="gameEntry">
-    <div class="d-flex">
+  <div class="gameEntry" id="gameEntries">
+    <div class="d-flex center">
       <div class="space"></div>
       <div class="title">
         <h2>{{ title }}</h2>
@@ -47,8 +47,12 @@ export default {
   align-items: flex-end;
 }
 
+.textBigger {
+  font-size: 0.5rem;
+}
 .van-button__text {
-  font-size: unset;
+  font-size: 0.25rem;
+  font-weight: 900;
 }
 h2 {
   margin: 0px;
@@ -62,11 +66,14 @@ p {
 .contents {
   color: #f9d6b9;
 }
-.gameEntry {
+#gameEntries {
   background-image: url('../assets/赛事/赛事条幅.png');
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
+  height: 100%;
+  width: 100%;
+  padding: 0.5rem 0;
 }
 .space {
   flex: 5%;

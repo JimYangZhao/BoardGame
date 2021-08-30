@@ -64,7 +64,7 @@ export default {
 }
 .background {
   background-image: url('../assets/斗地主/斗地主.jpg');
-  min-height: 42.7rem;
+  /* min-height: 42.7rem; */
   width: 100%;
   background-repeat: no-repeat;
 }
