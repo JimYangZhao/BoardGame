@@ -1,7 +1,7 @@
 <template>
   <div class="GamePage" title="吉祥赛事" id="Gamepage">
-    <MatchNav :logoSrc="logo" />
     <div class="background">
+      <MatchNav :logoSrc="logo" />
       <div class="head-img"></div>
       <div class="p-3"><img src="../assets/赛事/赛事福利.png" alt="赛事福利" /></div>
       <div class="gift d-flex center">
@@ -113,7 +113,7 @@ export default {
 
 <style scoped>
 .head-img {
-  height: 350px;
+  height: 8rem;
 }
 .background {
   background-image: url('../assets/赛事/赛事.png');

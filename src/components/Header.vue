@@ -7,7 +7,7 @@
         </li>
         <li style="float:right;height:100px; margin-right: 0.7rem;">
           <!-- 后期准备加上Menu Icon转换，用这个click closeIcon -->
-          <van-dropdown-menu id="general" @click="closeIcon">
+          <van-dropdown-menu id="general">
             <van-dropdown-item v-model="value1" class="textBigger">
               <ul id="navList">
                 <div class="white-space"></div>
@@ -19,11 +19,6 @@
               </ul>
             </van-dropdown-item>
           </van-dropdown-menu>
-          <!-- <div class="menu-icon-wrapper open" @click="toggle(this)">
-            <div class="menu-icon-first"></div>
-            <div class="menu-icon-second"></div>
-            <div class="menu-icon-thrid"></div>
-          </div> -->
         </li>
       </ul>
     </div>

@@ -1,15 +1,16 @@
 <template>
   <div class="gameActivity">
-    <div class="background">
-      <Header menu="菜单按钮" />
-      <div class="contents" style="min-height: 5rem; color: black;">
-        <div class="mt-5">
-          <router-link to="../news">返回</router-link>
-          <span>{{ contents }}</span>
+    <Header menu="菜单按钮" />
+    <img src="../../assets/游戏动态/最新动态.png" alt="最新动态" />
+    <div class="contents" style="min-height: 5rem; color: black;">
+      <div class="mt-1">
+        <router-link to="../">返回</router-link>
+        <div class="d-flex container">
+          <span>{{ info.content }}</span>
         </div>
       </div>
-      <Footer />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -17,43 +18,33 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import axios from 'axios';
-import router from 'vue-router';
+
 export default {
-  props: {
-    contents: String,
-  },
+  props: {},
   data() {
     return {
-      info: null,
+      info: [],
       list: [],
       loading: false,
       finished: false,
       refreshing: false,
+      contents: '',
     };
   },
   mounted() {
-    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=news').then((response) => (this.info = response));
+    axios.get('http://10.10.3.198:9081/api/material/detail/' + this.$route.params.id).then((response) => {
+      this.info = response.data.data;
+    });
   },
   components: {
     Header,
     Footer,
   },
-  methods: {
-    goback() {
-      return router.go(-1);
-    },
-  },
 };
 </script>
 
 <style scoped>
-.mt-5 {
-  margin-top: 5rem;
-}
-.background {
-  background-image: url('../../assets/游戏动态/游戏动态子页背景.jpg');
-  /* min-height: 42.7rem; */
-  width: 100%;
-  background-repeat: no-repeat;
+.mt-1 {
+  margin-top: 1rem;
 }
 </style>

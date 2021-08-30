@@ -23,7 +23,13 @@ export default new Router({
         return {x:0, y:0}
         }
     },
+
     routes: [
+        // {
+        //     path: '/news/:id',
+        //     name: '游戏动态自页面2',
+        //     component: GameActivity
+        // },
         {
             path: '/',
             name: '首页',
@@ -40,7 +46,7 @@ export default new Router({
             component: 游戏动态
         },
         {
-            path:'/news/GameActivity',
+            path:'/news/GameActivity/:id',
             name: '游戏动态自页面',
             component: GameActivity
         },
@@ -98,5 +104,3 @@ router.beforeEach((to, from, next) => {
 router.afterEach((to, from) => {
     console.log(`Router.afterEach => from=${from.path}, to=${to.path}`);
 });
-
-

@@ -8,7 +8,13 @@
         </li>
         <li style="float:right;height:100px;">
           <!-- 按钮 -->
-          <van-button size="large" style="white-space: nowrap; border-radius: 5px;" class="goDownload">立即下载</van-button>
+          <van-button url="" size="large" class="goDownload">立即下载</van-button>
+          <!-- <div v-if="isiOS">
+            <router-link :to="info.ios_url" class="goDownload">立即下载</router-link>
+          </div>
+          <div v-else>
+            <router-link :to="info.android_url" class="goDownload">立即下载</router-link>
+          </div> -->
           <!-- 菜单 -->
           <van-dropdown-menu>
             <van-dropdown-item v-model="value1" class="textBigger">
@@ -37,6 +43,7 @@ import { Swipe, SwipeItem } from 'vant';
 import { Lazyload } from 'vant';
 import { DropdownMenu, DropdownItem } from 'vant';
 import { Button } from 'vant';
+import axios from 'axios';
 
 Vue.use(Button);
 Vue.use(DropdownMenu);
@@ -56,7 +63,15 @@ export default {
       return this.$route.params.username;
     },
   },
-
+  mounted() {
+    axios.get('http://10.10.3.198:9081/api/product/' + 265).then((response) => {
+      this.info = response.data.config;
+    });
+    const u = navigator.userAgent;
+    const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    this.isiOS = isiOS;
+    console.log(this.info);
+  },
   methods: {
     goBack() {
       window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/');
@@ -72,6 +87,8 @@ export default {
     return {
       show: false,
       noMore: true,
+      info: [],
+      isiOS: null,
       nav: [
         { id: 0, name: '首页' },
         { id: 1, name: '关于吉祥' },
@@ -147,25 +164,4 @@ p {
 .nav > ul > li {
   border-right: 0;
 }
-/* .van-dropdown-menu__title::after {
-  position: relative;
-  font-size: 0.3rem;
-  margin-top: 0;
-  top: unset;
-  right: unset;
-  -webkit-transorm: unset;
-  transform: unset;
-  opacity: 1;
-  content: '三';
-  color: white;
-  border: 0;
-  font-weight: 900;
-}
-.van-dropdown-menu__bar {
-  background-color: transparent;
-  border: 1px solid white;
-  width: 0.7rem;
-  height: 0.6rem;
-  margin-left: 0.3rem;
-} */
 </style>

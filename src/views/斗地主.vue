@@ -60,7 +60,7 @@ export default {
 
 <style scoped>
 .head-img {
-  height: 15.5rem;
+  height: 14.5rem;
 }
 .background {
   background-image: url('../assets/斗地主/斗地主.jpg');

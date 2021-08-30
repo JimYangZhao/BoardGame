@@ -1,7 +1,7 @@
 <template>
   <div class="majiang" title="麻将" id="majiang">
-    <MatchNav :logoSrc="logo" />
     <div class="background">
+      <MatchNav :logoSrc="logo" />
       <div class="head-img"></div>
       <swiper class="swiper" :options="swiperOption" style="margin-bottom:2rem;">
         <swiper-slide><img src="../assets/麻将/轮播图1.png" alt="轮播图1"/></swiper-slide>
@@ -64,7 +64,7 @@ export default {
 
 <style scoped>
 .head-img {
-  height: 16rem;
+  height: 14.5rem;
 }
 .background {
   background-image: url('../assets/麻将/麻将.jpg');

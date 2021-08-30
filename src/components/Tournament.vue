@@ -2,9 +2,9 @@
   <div class="Tournament p-3">
     <!-- <img src="../assets/首页/吉祥赛事.png" alt="吉祥赛事" /> -->
     <van-grid class="grid-container">
-      <div v-for="item in info.data.data.data.slice(0, 4)" :key="item.id" class="item">
+      <div v-for="item in info" :key="item.id" class="item">
         <van-grid-item>
-          <img width="100%" :src="item.thumb" alt="thumb_img" @click="showPopup" />
+          <img width="100%" :src="item" alt="thumb_img" @click="showPopup" />
           <van-popup v-model="show">
             <video width="700" controls>
               <source type="video/mp4" :src="item.url" />
@@ -40,7 +40,12 @@ export default {
     title: String,
   },
   mounted() {
-    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=match').then((response) => (this.info = response));
+    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=match').then((response) => {
+      // this.info = response.data.data.data.slice(0, 4);
+      this.info = response.data.data.data.map((item) => {
+        return item.thumb;
+      });
+    });
   },
   methods: {
     showPopup() {
@@ -51,7 +56,7 @@ export default {
     return {
       noMore: true,
       show: false,
-      info: null,
+      info: [],
     };
   },
 };

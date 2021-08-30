@@ -1,25 +1,27 @@
 <template>
   <div class="gameProduct">
-    <div class="background">
-      <Header menu="菜单按钮" />
-      <div class="contents">
-        <!-- <div v-for="name in info" class="name" :key="name.id"> -->
-        <div class="pt-3">
-          <div v-for="item in info.data.data" :key="item.id" class="mb-3">
-            <a :href="item.product_url" class="d-flex" style="color: inherit;">
-              <div class="pro-img">
-                <img :src="item.thumb" alt="thumb" height="150" />
-              </div>
-              <div class="pro-text d-flex flex-v">
-                <h3>{{ item.name }}</h3>
-                <p>{{ item.tag }}</p>
-              </div>
-              <div class="pro-right-img center mr-0">
-                <img src="../assets/游戏产品/箭头_arrow591.png" alt="箭头_arrow591" />
-              </div>
-            </a>
-          </div>
+    <!-- <div class="background"> -->
+    <Header menu="菜单按钮" />
+    <img src="../assets/游戏产品/游戏产品banner.png" alt="游戏产品banner" />
+    <div class="contents">
+      <!-- <div v-for="name in info" class="name" :key="name.id"> -->
+      <div class="pt-3">
+        <div v-for="item in info.data.data" :key="item.id" class="mb-3">
+          <a :href="item.product_url" class="d-flex" style="color: inherit;">
+            <div class="pro-img">
+              <img :src="item.thumb" alt="thumb" height="150" />
+            </div>
+            <div class="pro-text d-flex flex-v">
+              <h3>{{ item.name }}</h3>
+              <p>{{ item.tag }}</p>
+            </div>
+            <div class="pro-right-img center mr-0">
+              <img src="../assets/游戏产品/箭头_arrow591.png" alt="箭头_arrow591" />
+            </div>
+          </a>
+          <hr />
         </div>
+        <!-- </div> -->
       </div>
 
       <Footer />
@@ -37,7 +39,7 @@ export default {
   },
   data() {
     return {
-      info: null,
+      info: [],
     };
   },
   mounted() {
@@ -87,10 +89,10 @@ export default {
   min-height: 5rem;
   width: 90%;
   margin: auto;
-  margin-top: 4.2rem;
+  /* margin-top: 4.2rem; */
 }
 .pt-3 {
-  padding-top: 1.35rem;
+  padding-top: 0.4rem;
 }
 .background {
   background-image: url('../assets/游戏产品/游戏产品背景.png');

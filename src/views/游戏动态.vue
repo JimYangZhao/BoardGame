@@ -6,9 +6,9 @@
       <div class="contents">
         <van-pull-refresh v-model="refreshing">
           <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
-            <van-cell v-for="item in info.data.data.data" :key="item.id" class="mb-3">
+            <van-cell v-for="item in info" :key="item.id" class="mb-3">
               <div class="flex-v w-100">
-                <router-link :to="{ name: '游戏动态自页面', path: '/news/GameActivity' }" class="d-flex ml-w-100 color-position">
+                <router-link :to="{ path: '/news/GameActivity/' + item.id }" class="d-flex ml-w-100 color-position">
                   <div class="pro-img">
                     <img src="../assets/游戏动态/通知.png" alt="通知" height="50" />
                   </div>
@@ -44,7 +44,7 @@ export default {
 
   data() {
     return {
-      info: null,
+      info: [],
       list: [],
       loading: false,
       finished: false,
@@ -52,7 +52,9 @@ export default {
     };
   },
   mounted() {
-    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=news').then((response) => (this.info = response));
+    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=news').then((response) => {
+      this.info = response.data.data.data;
+    });
   },
   components: {
     Header,

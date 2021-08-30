@@ -14,23 +14,23 @@
       </div>
       <hr />
       <div class="container">
-        <span style="color: white; font-size:30px;"
+        <span style="color: white;" class="bigger-text-footer"
           ><router-link to="/about">关于吉祥 | </router-link><a href="#">商务合作 | </a> <a href="#">家长监护<br /></a><a href="#">用户协议 | </a><a href="#">隐私政策</a></span
         >
-        <p style="color: white; font-size:20px;">
+        <p style="color: white;" class="smaller-text-footer">
           控制不良游戏 拒绝盗版游戏 注意自我保护 谨防上当受骗<br />
           适度游戏益脑 沉迷游戏伤身 合理安排时间 享受健康生活<br />
           本平台游戏仅适合18岁以上人群<br />
         </p>
 
-        <p style="color:#dfe098; font-size:20px;">
+        <p style="color:#dfe098;" class="smaller-text-footer">
           吉网文[2019]2187・005号<br />
           ICP证：吉B24-20100052 吉ICP备13001708号口 文网游备字[2017]<br />
           M-CSG1960号 | 吉公网安备 22010202000453号<br />
           吉祥麻将：978-7-7979-2233-3<br />新广出审[2016]3620号
         </p>
 
-        <p style="color:white; font-size:20px;">
+        <p style="color:white;" class="smaller-text-footer">
           2021吉祥游戏版权所有|吉林省鑫泽网络技术有限公司I<br />
           地址：吉林省长春市二道区临河街七条东盛街道办事处306-1室<br />
           客服热线：4008-777-868
@@ -76,6 +76,12 @@ export default {
 </script>
 
 <style scoped>
+.bigger-text-footer {
+  font-size: 0.5rem;
+}
+.smaller-text-footer {
+  font-size: 0.3rem;
+}
 p {
   font-size: 6px;
   white-space: nowrap;

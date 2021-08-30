@@ -3,7 +3,7 @@
     <!-- <div class="d-flex container ht-2"></div> -->
     <!-- <p class="leftTitle">{{ leftTitle }}</p> -->
     <div class="container bot-free">
-      <div v-for="item in info.data.data.data" :key="item.id" class="d-flex w-100 align-center">
+      <div v-for="item in info" :key="item.id" class="d-flex w-100 align-center">
         <p class="leftTitle">{{ item.title }}</p>
         <van-notice-bar class="title" :text="item.description" />
       </div>
@@ -11,7 +11,7 @@
 
     <div class="d-flex flex-vertical center">
       <hr style="width: 81%; margin: auto" />
-      <ul v-for="item in comments.data.data.data" :key="item.id" style="width:90%;">
+      <ul v-for="item in comments" :key="item.id" style="width:90%;">
         <!-- li v-for="(i, index) in data" v-if="index < 2" v-text="i" -->
         <ol class="news-contents">
           <p>{{ item.description }}</p>
@@ -43,8 +43,8 @@ export default {
   data() {
     return {
       activeName: 'a',
-      info: null,
-      comments: null,
+      info: [],
+      comments: [],
       news: [
         {
           id: 0,
@@ -63,8 +63,12 @@ export default {
   },
 
   mounted() {
-    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=popular').then((response) => (this.info = response));
-    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=news').then((response) => (this.comments = response));
+    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=popular').then((response) => {
+      this.info = response.data.data.data;
+    });
+    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=news').then((response) => {
+      this.comments = response.data.data.data;
+    });
   },
 };
 </script>

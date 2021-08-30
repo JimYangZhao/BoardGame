@@ -260,6 +260,9 @@ li {
   padding: 5px 10px;
   background: linear-gradient(0deg, rgba(255, 216, 86, 1) 0%, rgba(255, 235, 142, 1) 100%);
   border: 0px;
+  white-space: nowrap;
+  border-radius: 5px;
+  color: black;
 }
 .van-swipe__indicators {
   position: absolute;
@@ -291,7 +294,7 @@ li {
   display: none;
 }
 .van-dropdown-item {
-  top: 1.3rem !important;
+  top: 1.6rem !important;
 }
 .swiper-container-horizontal > .slider-pagination-bullets {
   display: none;

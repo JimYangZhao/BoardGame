@@ -18,6 +18,7 @@ export default {};
 .cover {
   position: absolute;
   transform: translateY(0.1rem);
+  width: 90%;
 }
 .container {
   width: 90%;

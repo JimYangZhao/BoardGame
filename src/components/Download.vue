@@ -2,22 +2,22 @@
   <div class="download">
     <h1>吉祥, 分享快乐<span style="color:red;">十一年</span></h1>
     <div style="width:100%;height:600px">
-      <!-- <slider ref="slider" :options="options">
-        <slideritem v-for="(item, index) in someList" :key="index" :style="item.style">
-          <img v-bind:src="item.img" alt="image" style="height: 250px;margin-top: 30px;" />
-          <p style="color:black; margin: 0.5rem">{{ item.title }}</p>
-          <router-link :to="item.link">
-            <van-button type="default" class="oneClickDL">{{ item.button }}</van-button>
-          </router-link>
-        </slideritem>
-      </slider> -->
       <slider ref="slider" :options="options">
-        <slideritem v-for="item in info.data.data" :key="item.id" style="width: 400px">
-          <a :href="item.ios_url">
-            <img :src="item.thumb" alt="image" style="height: 250px;" />
-            <p class="game-title">{{ item.name }}</p>
-            <van-button type="default" class="oneClickDL">直接下载</van-button>
-          </a>
+        <slideritem v-for="item in info" :key="item.id" style="width: 400px">
+          <div v-if="isiOS">
+            <a :href="item.ios_url">
+              <img :src="item.thumb" alt="image" style="height: 250px;" />
+              <p class="game-title">{{ item.name }}</p>
+              <van-button type="default" class="oneClickDL">直接下载</van-button>
+            </a>
+          </div>
+          <div v-else>
+            <a :href="item.android_url">
+              <img :src="item.thumb" alt="image" style="height: 250px;" />
+              <p class="game-title">{{ item.name }}</p>
+              <van-button type="default" class="oneClickDL">直接下载</van-button>
+            </a>
+          </div>
         </slideritem>
       </slider>
     </div>
@@ -46,7 +46,8 @@ export default {
     return {
       value1: 0,
       value2: 'a',
-      info: null,
+      info: [],
+      isiOS: null,
       options: {
         currentPage: 1,
         itemAnimation: true,
@@ -60,9 +61,17 @@ export default {
       },
     };
   },
+
   mounted() {
-    axios.get('http://10.10.3.198:9081/api/product/list').then((response) => (this.info = response));
+    axios.get('http://10.10.3.198:9081/api/product/list').then((response) => {
+      this.info = response.data.data;
+      // console.log(this.info);
+    });
+    const u = navigator.userAgent;
+    const isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    this.isiOS = isiOS;
   },
+  methods: {},
 };
 </script>
 

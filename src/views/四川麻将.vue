@@ -1,7 +1,7 @@
 <template>
   <div class="sichuanmajiang" title="四川麻将" id="sichuanmajiang">
-    <MatchNav :logoSrc="logo" />
     <div class="background">
+      <MatchNav :logoSrc="logo" />
       <div class="head-img"></div>
       <swiper class="swiper" :options="swiperOption" style="margin-bottom:2rem;">
         <swiper-slide><img src="../assets/四川麻将/轮播图1.png" alt="轮播图1"/></swiper-slide>
@@ -67,7 +67,7 @@ export default {
   margin-top: 2.7rem;
 }
 .head-img {
-  height: 16rem;
+  height: 14.5rem;
 }
 .background {
   background-image: url('../assets/四川麻将/川麻.jpg');

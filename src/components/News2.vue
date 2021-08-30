@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       activeName: 'a',
-      info: null,
+      info: [],
       news: [
         {
           id: 0,
