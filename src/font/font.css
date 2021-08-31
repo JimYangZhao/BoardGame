@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'hanbao';
+  src: url-loader('SOURCEHANSANSCN-REGULAR.OTF');
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  font-family: 'hanbao';
+}
