@@ -76,19 +76,6 @@ export default {
   align-content: center;
   width: 100px;
 }
-.btn_position {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  z-index: 999;
-  margin-left: -70px;
-  color: white;
-  background-color: red;
-  border: 0;
-  border-radius: 20px;
-  font-size: 30px;
-  padding: 25px 20px;
-}
 h1 {
   color: #ce182e;
   margin-bottom: 5px;

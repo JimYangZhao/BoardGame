@@ -6,7 +6,7 @@
     <div class="contents">
       <!-- <div v-for="name in info" class="name" :key="name.id"> -->
       <div class="pt-3">
-        <div v-for="item in info.data.data" :key="item.id" class="mb-3">
+        <div v-for="item in info" :key="item.id" class="mb-3">
           <a :href="item.product_url" class="d-flex" style="color: inherit;">
             <div class="pro-img">
               <img :src="item.thumb" alt="thumb" height="150" />
@@ -23,9 +23,8 @@
         </div>
         <!-- </div> -->
       </div>
-
-      <Footer />
     </div>
+    <Footer />
   </div>
 </template>
 
@@ -43,7 +42,9 @@ export default {
     };
   },
   mounted() {
-    axios.get('http://10.10.3.198:9081/api/product/list').then((response) => (this.info = response));
+    axios.get('http://10.10.3.198:9081/api/product/list').then((response) => {
+      this.info = response.data.data;
+    });
   },
   components: {
     Header,

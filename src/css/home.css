@@ -121,9 +121,9 @@ button {
   z-index: 999;
   color: white;
   background-color: #ce182e;
-  border-radius: 20px;
-  font-size: 30px;
-  padding: 25px 20px;
+  border-radius: 0.53333rem;
+  font-size: 0.6rem;
+  padding: 0.5rem 0.53333rem;
 }
 /* .title {
   margin: 3vh;

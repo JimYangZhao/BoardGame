@@ -6,9 +6,9 @@
       <div class="p-3"><img src="../assets/公司介绍/公司介绍文字.png" alt="公司介绍文字" /></div>
       <img :src="images" alt="img" />
       <div class="container">
-        <div v-for="item in info.data.data.data" :key="item.id" class="mb-3">
+        <div v-for="item in info" :key="item.id" class="mb-3">
           <div class="pro-text d-flex flex-v">
-            <span :v-html="html">{{ item.content }}</span>
+            <span>{{ item.content }}</span>
           </div>
         </div>
       </div>
@@ -37,25 +37,14 @@ export default {
     Footer,
   },
   mounted() {
-    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=description').then((response) => (this.info = response));
+    axios.get('http://10.10.3.198:9081/api/material/list?categoryTag=description').then((response) => {
+      this.info = response.data.data.data;
+    });
   },
 };
 </script>
 
 <style scoped>
-.btn_position {
-  position: absolute;
-  bottom: 10%;
-  left: 50%;
-  z-index: 999;
-  margin-left: -70px;
-  color: white;
-  background-color: red;
-  border: 0;
-  border-radius: 20px;
-  font-size: 30px;
-  padding: 25px 20px;
-}
 h1 {
   color: #ce182e;
   margin-bottom: 5px;

@@ -87,7 +87,7 @@ export default {
   position: absolute;
   bottom: 10%;
   left: 50%;
-  margin-left: -2.1rem;
+  margin-left: -1.8rem;
   border-color: transparent;
 }
 .banner {
